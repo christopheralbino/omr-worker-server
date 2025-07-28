@@ -11,10 +11,11 @@ RUN apt-get update && apt-get install -y \
     xvfb \
     python3 \
     python3-pip \
+    python3-full \
     && rm -rf /var/lib/apt/lists/*
 
-# Install music21 for basic music processing
-RUN pip3 install music21 opencv-python-headless pillow
+# Install Python packages using --break-system-packages for container environment
+RUN pip3 install --break-system-packages music21 opencv-python-headless pillow
 
 # Set up app directory
 WORKDIR /app
@@ -39,3 +40,4 @@ EXPOSE 3001
 
 # Start command
 CMD ["npm", "start"]
+

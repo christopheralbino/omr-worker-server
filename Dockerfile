@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y \
     libcairo-gobject2 \
     libgtk-3-0 \
     libgdk-pixbuf2.0-0 \
+    openjdk-17-jre-headless \
     && rm -rf /var/lib/apt/lists/*
 
 # Install MuseScore
@@ -25,9 +26,6 @@ RUN wget https://github.com/musescore/MuseScore/releases/download/v3.6.2/MuseSco
     && ./MuseScore-3.6.2.548021370-x86_64.AppImage --appimage-extract \
     && mv squashfs-root /opt/musescore \
     && ln -s /opt/musescore/usr/bin/mscore /usr/local/bin/mscore
-
-# Install Java for Audiveris
-RUN apt-get update && apt-get install -y openjdk-11-jre-headless
 
 # Install Audiveris
 RUN wget https://github.com/Audiveris/audiveris/releases/download/5.3/audiveris-5.3.tar.gz \
@@ -60,3 +58,4 @@ EXPOSE 3001
 
 # Start command
 CMD ["npm", "start"]
+

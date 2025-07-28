@@ -1,5 +1,4 @@
 ## 3. nixpacks.toml
-```toml
 [phases.install]
 cmds = ["npm install"]
 
@@ -8,4 +7,3 @@ cmds = ["echo 'Build complete'"]
 
 [start]
 cmd = "npm start"
-```

@@ -1,5 +1,5 @@
 ## 1. server.js
-```javascript
+javascript
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs-extra');
@@ -445,4 +445,3 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
-```
